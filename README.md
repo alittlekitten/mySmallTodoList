@@ -47,6 +47,7 @@
 - setTimeout과 clearTimeout, useRef를 이용해서 중복된 이벤트가 처리되지 않도록 만들었습니다.
 - toast는 상태메시지를 저장하기 위해, toastOn은 toast의 상태를 관리하기 위해, toastEvent는 setTimeout을 하나의 변수로 처리하기 위하여 사용했습니다.
 - 토스트메시지는 transition을 통해 1.5초간 점차 보여졌다가 사라지는 방식으로 동작합니다.
+- 3초가 너무 길어서 1.5초로 줄였습니다...
 
 <br />
 
