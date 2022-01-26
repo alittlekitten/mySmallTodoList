@@ -1,6 +1,18 @@
 ## 🎈CRA로 TodoList 만들기
 
-판사스터디의 라이브코딩 연습 과정 중 이것저것 다양하게 시도하면서 React CRA로 TodoList를 만들었습니다!
+**최신 업데이트 날짜 : `2022.01.27`**
+
+- [판사스터디](https://github.com/BoostUpStudy/PangyoHunter)의 라이브코딩 연습 과정 중 이것저것 다양하게 시도하면서 React CRA로 TodoList를 만들었습니다!
+
+<br />
+
+## 🔧 기술스택
+
+<div>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Create React App-09D3AC?style=flat-square&logo=Create React App&logoColor=white"/>
+</div>
 
 <br />
 
