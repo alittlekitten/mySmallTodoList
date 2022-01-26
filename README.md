@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+## 🎈CRA로 TodoList 만들기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+판사스터디의 라이브코딩 연습 과정 중 이것저것 다양하게 시도하면서 React CRA로 TodoList를 만들었습니다!
 
-## Available Scripts
+<br />
 
-In the project directory, you can run:
+## 🖼사진
 
-### `npm start`
+![image](https://user-images.githubusercontent.com/14370441/151214032-3190da08-3260-4860-b809-0393ab8074b6.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🔑고민한 것
 
-### `npm test`
+### onClick이벤트에 매개변수 담기
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 요소 삭제를 위해 onClick에 key값을 건네줘서 확인하는 절차를 거쳤습니다.
+- 함수를 직접 넣는 대신 익명함수를 사용해서 필요한 매개변수를 전달했습니다.
 
-### `npm run build`
+<br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 인라인 스타일
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 인라인으로 스타일을 넣음으로써 조건에 따른 스타일 변경을 구현했습니다.
+- 중괄호와 삼항연산자(?)를 통해 구현할 수 있었습니다.
+- CSS의 text-decoration은 HTML inline에서는 textDecoration으로 사용할 수 있습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br />
 
-### `npm run eject`
+### 토스트 메시지 띄우기
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- 전역에서 onToast함수를 만들고 각 컴포넌트로 props를 전달했습니다.
+- onToast함수에서는 toast 상태에 따라 className에 on을 붙임으로써 조건별 스타일을 적용하도록 설정했습니다.
+- setTimeout과 clearTimeout, useRef를 이용해서 중복된 이벤트가 처리되지 않도록 만들었습니다.
+- toast는 상태메시지를 저장하기 위해, toastOn은 toast의 상태를 관리하기 위해, toastEvent는 setTimeout을 하나의 변수로 처리하기 위하여 사용했습니다.
+- 토스트메시지는 transition을 통해 1.5초간 점차 보여졌다가 사라지는 방식으로 동작합니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 데이터 관리
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- form태그를 이용하여 전송 이벤트를 감지하게 하였고, onChange이벤트를 통해서 input태그 내의 내용이 변경될 때마다 감지했습니다.
+- addTodo함수 내에서는 form태그의 기본 동작을 막고(preventDefault), input태그 내의 내용은 useRef로 관리했습니다.
+- 처음에는 useState를 사용했으나, 매번 input안에 내용을 작성할 때마다 렌더링이 될 필요는 없다고 생각했기 때문에 useRef로 구조를 변경하여 input태그 내의 내용을 관리했습니다.
+- List.jsx에서는 삭제와 상태변화를 각각 filter와 map+삼항연산자를 통해서 구현하였습니다.
+- 삭제 및 상태변화에 필요한 key값 전달은 onClick이벤트가 발생했을 때 실행되는 콜백함수에 key를 담는 방식으로 해결하였습니다. (위에 서술)
