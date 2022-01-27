@@ -2,7 +2,8 @@ import "./List.css";
 import React from "react";
 
 const List = ({ todos, setTodos, setToast, onToast }) => {
-  const deleteTodo = (target) => {
+  const deleteTodo = (e) => {
+    const target = +e.target.dataset.num;
     const newtodos = todos.filter((todo) => todo.num !== target);
     setTodos(newtodos);
     setToast("삭제되었습니다.");
@@ -21,14 +22,18 @@ const List = ({ todos, setTodos, setToast, onToast }) => {
 
   const todoList = todos.map((todo) => (
     <div key={todo.num}>
-      <input type="checkbox" onClick={() => changeStatus(todo.num)}></input>
+      <input
+        type="checkbox"
+        onClick={changeStatus.bind(this, todo.num)}
+      ></input>
       <span style={todo.done ? { textDecoration: "line-through" } : {}}>
         {todo.what}
       </span>
       <button
         type="submit"
         className="xbtn"
-        onClick={() => deleteTodo(todo.num)}
+        data-num={todo.num}
+        onClick={deleteTodo}
       >
         X
       </button>
