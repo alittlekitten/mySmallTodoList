@@ -5,6 +5,9 @@
 - [판사스터디](https://github.com/BoostUpStudy/PangyoHunter)의 라이브코딩 연습 과정 중 이것저것 다양하게 시도하면서 React CRA로 TodoList를 만들었습니다!
 - [문제 조건](https://jealous-seaplane-c2f.notion.site/To-do-list-0ba2e16ad2604559a93ccab33f174beb)은 링크로 달았습니다 :)
 
+## 👉 배포 페이지
+[👉 바로가기](https://alittlekitten.github.io/mySmallTodoList/)
+
 <br />
 
 ## 🔧 기술스택
